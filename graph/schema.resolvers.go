@@ -13,16 +13,16 @@ import (
 	"github.com/rishabhpatil02/project-management-tool/graph/model"
 )
 
-// CreateTodo is the resolver for the createTodo field.
-func (r *mutationResolver) CreateTodo(ctx context.Context, input model.NewTodo) (*model.Todo, error) {
+// CreateTask is the resolver for the createTask field.
+func (r *mutationResolver) CreateTask(ctx context.Context, input model.NewTask) (*model.Task, error) {
 	randNumber, _ := rand.Int(rand.Reader, big.NewInt(100))
-	todo := &model.Todo{
+	task := &model.Task{
 		Text: input.Text,
 		ID:   fmt.Sprintf("T%d", randNumber),
 		User: &model.User{ID: input.UserID, Name: "user " + input.UserID},
 	}
-	r.todos = append(r.todos, todo)
-	return todo, nil
+	r.tasks = append(r.tasks, task)
+	return task, nil
 }
 
 // CreateUser is the resolver for the createUser field.
@@ -36,9 +36,9 @@ func (r *mutationResolver) CreateUser(ctx context.Context, input model.NewUser) 
 	return user, nil
 }
 
-// Todos is the resolver for the todos field.
-func (r *queryResolver) Todos(ctx context.Context) ([]*model.Todo, error) {
-	return r.todos, nil
+// Tasks is the resolver for the tasks field.
+func (r *queryResolver) Tasks(ctx context.Context) ([]*model.Task, error) {
+	return r.tasks, nil
 }
 
 // Users is the resolver for the users field.

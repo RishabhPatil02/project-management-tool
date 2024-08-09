@@ -2,7 +2,7 @@
 #
 # https://gqlgen.com/getting-started/
 
-type Todo {
+type Task {
   id: ID!
   text: String!
   done: Boolean!
@@ -15,11 +15,11 @@ type User {
 }
 
 type Query {
-  todos: [Todo!]!
+  tasks: [Task!]!
   users: [User!]!
 }
 
-input NewTodo {
+input NewTask {
   text: String!
   userId: String!
 }
@@ -29,6 +29,6 @@ input NewUser {
 }
 
 type Mutation {
-  createTodo(input: NewTodo!): Todo!
+  createTask(input: NewTask!): Task!
   createUser(input: NewUser!): User!
 }

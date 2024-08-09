@@ -7,6 +7,6 @@ import "github.com/rishabhpatil02/project-management-tool/graph/model"
 // It serves as dependency injection for your app, add any dependencies you require here.
 
 type Resolver struct {
-	todos []*model.Todo
+	tasks []*model.Task
 	users []*model.User
 }
