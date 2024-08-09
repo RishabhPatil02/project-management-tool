@@ -25,9 +25,25 @@ func (r *mutationResolver) CreateTodo(ctx context.Context, input model.NewTodo) 
 	return todo, nil
 }
 
+// CreateUser is the resolver for the createUser field.
+func (r *mutationResolver) CreateUser(ctx context.Context, input model.NewUser) (*model.User, error) {
+	randNumber, _ := rand.Int(rand.Reader, big.NewInt(100))
+	user := &model.User{
+		ID:   fmt.Sprintf("T%d", randNumber),
+		Name: input.Name,
+	}
+	r.users = append(r.users, user)
+	return user, nil
+}
+
 // Todos is the resolver for the todos field.
 func (r *queryResolver) Todos(ctx context.Context) ([]*model.Todo, error) {
 	return r.todos, nil
+}
+
+// Users is the resolver for the users field.
+func (r *queryResolver) Users(ctx context.Context) ([]*model.User, error) {
+	return r.users, nil
 }
 
 // Mutation returns MutationResolver implementation.

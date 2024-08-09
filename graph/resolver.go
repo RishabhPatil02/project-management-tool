@@ -8,4 +8,5 @@ import "github.com/rishabhpatil02/project-management-tool/graph/model"
 
 type Resolver struct {
 	todos []*model.Todo
+	users []*model.User
 }
