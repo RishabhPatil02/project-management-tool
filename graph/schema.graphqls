@@ -9,6 +9,7 @@ type Task {
   text: String!
   done: Boolean!
   dueDate: Date
+  users: [ID!]!
 }
 
 type User {
@@ -24,6 +25,7 @@ type Query {
 input NewTask {
   text: String!
   dueDate: Date
+  users: [ID!]
 }
 
 input NewUser {

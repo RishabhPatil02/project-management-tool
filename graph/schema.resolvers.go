@@ -20,6 +20,7 @@ func (r *mutationResolver) CreateTask(ctx context.Context, input model.NewTask) 
 		ID:      fmt.Sprintf("T%d", randNumber),
 		Text:    input.Text,
 		DueDate: input.DueDate,
+		Users:   input.Users,
 	}
 	r.tasks = append(r.tasks, task)
 	return task, nil
