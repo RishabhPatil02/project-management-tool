@@ -6,7 +6,8 @@ type Mutation struct {
 }
 
 type NewTask struct {
-	Text string `json:"text"`
+	Text    string  `json:"text"`
+	DueDate *string `json:"dueDate,omitempty"`
 }
 
 type NewUser struct {
@@ -17,9 +18,10 @@ type Query struct {
 }
 
 type Task struct {
-	ID   string `json:"id"`
-	Text string `json:"text"`
-	Done bool   `json:"done"`
+	ID      string  `json:"id"`
+	Text    string  `json:"text"`
+	Done    bool    `json:"done"`
+	DueDate *string `json:"dueDate,omitempty"`
 }
 
 type User struct {

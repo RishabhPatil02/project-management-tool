@@ -17,8 +17,9 @@ import (
 func (r *mutationResolver) CreateTask(ctx context.Context, input model.NewTask) (*model.Task, error) {
 	randNumber, _ := rand.Int(rand.Reader, big.NewInt(100))
 	task := &model.Task{
-		Text: input.Text,
-		ID:   fmt.Sprintf("T%d", randNumber),
+		ID:      fmt.Sprintf("T%d", randNumber),
+		Text:    input.Text,
+		DueDate: input.DueDate,
 	}
 	r.tasks = append(r.tasks, task)
 	return task, nil

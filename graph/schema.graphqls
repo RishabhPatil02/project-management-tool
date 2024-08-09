@@ -2,10 +2,13 @@
 #
 # https://gqlgen.com/getting-started/
 
+scalar Date
+
 type Task {
   id: ID!
   text: String!
   done: Boolean!
+  dueDate: Date
 }
 
 type User {
@@ -20,6 +23,7 @@ type Query {
 
 input NewTask {
   text: String!
+  dueDate: Date
 }
 
 input NewUser {
