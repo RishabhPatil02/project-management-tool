@@ -6,8 +6,7 @@ type Mutation struct {
 }
 
 type NewTask struct {
-	Text   string `json:"text"`
-	UserID string `json:"userId"`
+	Text string `json:"text"`
 }
 
 type NewUser struct {
@@ -21,7 +20,6 @@ type Task struct {
 	ID   string `json:"id"`
 	Text string `json:"text"`
 	Done bool   `json:"done"`
-	User *User  `json:"user"`
 }
 
 type User struct {

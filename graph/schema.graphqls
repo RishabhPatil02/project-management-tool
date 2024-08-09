@@ -6,7 +6,6 @@ type Task {
   id: ID!
   text: String!
   done: Boolean!
-  user: User!
 }
 
 type User {
@@ -21,7 +20,6 @@ type Query {
 
 input NewTask {
   text: String!
-  userId: String!
 }
 
 input NewUser {
